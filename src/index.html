@@ -6,13 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/swiper-4.3.3.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
 </head>
 
 <body>
     <div class="box">
-        <header class="header"></header>
+        <header class="header">
+            <h1>全场包邮 低至5元</h1>
+        </header>
         <main class="main"></main>
+        <section>
+            <nav class="nav">
+                <div class="list">
+                    <span>推荐</span>
+                    <span>推荐</span>
+                    <span>推荐</span>
+                    <span>推荐</span>
+                    <span>推荐</span>
+                    <span>推荐</span>
+                    <span>推荐</span>
+                    <span>推荐</span>
+                    <span>推荐</span>
+                    <span>推荐</span>
+                </div>
+            </nav>
+            <div class="banner">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/2.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/main.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
+<script src="./js/swiper-4.3.3.min.js"></script>
+<script src="./js/bscroll.js"></script>
+<script>
+    var listspan = document.querySelectorAll('.list span');
+    var myswiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        autoplay: true
+    });
+
+    var str = 0;
+    for (var i = 0; i < listspan.length; i++) {
+        str += listspan[i].offsetWidth
+    }
+    var Bscroll = new BScroll(".nav", {
+        scrollX: true
+    })
+</script>
 
 </html>
